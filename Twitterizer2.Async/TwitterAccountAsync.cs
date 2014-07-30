@@ -19,6 +19,8 @@
         /// </returns>
         public static IAsyncResult GetStatus(OAuthTokens tokens, OptionalProperties options, TimeSpan timeout, Action<TwitterAsyncResponse<TwitterRateLimitStatus>> function)
         {
+            Console.WriteLine(
+                "cookies");
             return AsyncUtility.ExecuteAsyncMethod(tokens, options, timeout, TwitterRateLimitStatus.GetStatus, function);
         }
 
